@@ -2,8 +2,6 @@ import "./App.css";
 import HeroLayout1 from "./ui-components/HeroLayout1";
 
 function App() {
-  // const quickSightUrl =
-  //   "https://d2lzvqq4w5ulk4.cloudfront.net/?dashboardName=generalInsurance";
 
   return (
     <>
