@@ -1,4 +1,3 @@
-import { Authenticator } from "@aws-amplify/ui-react";
 import "./App.css";
 import HeroLayout1 from "./ui-components/HeroLayout1";
 
