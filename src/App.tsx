@@ -1,26 +1,33 @@
+import { useEffect, useState } from "react";
+import ReactLoading from "react-loading";
 import "./App.css";
-import HeroLayout1 from "./ui-components/HeroLayout1";
 
 function App() {
+  const [showIframe, setShowIframe] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setShowIframe(true);
+    }, 1500);
+  }, []);
 
   return (
     <>
-      {/* <Authenticator>
-        {({ signOut, user }) => (
-          <main>
-            <h1>Olá {user?.username}</h1>
-            <button onClick={signOut}>Sair</button>
-          </main>
-        )}
-      </Authenticator> */}
-
-      <iframe
-        width="960"
-        height="720"
-        src="https://us-east-1.quicksight.aws.amazon.com/sn/embed/share/accounts/572874686978/dashboards/46818581-4454-4553-9b7b-2790eb9d73ab?directory_alias=henriquegomes"
-      />
-
-      <HeroLayout1 />
+      <h1>PoC Quicksight</h1>
+      {showIframe ? (
+        <iframe
+          width="100%"
+          height="720"
+          src="https://us-east-1.quicksight.aws.amazon.com/sn/embed/share/accounts/572874686978/dashboards/46818581-4454-4553-9b7b-2790eb9d73ab?directory_alias=henriquegomes"
+        />
+      ) : (
+        <ReactLoading
+          type={"bubbles"}
+          color={"#D91F05"}
+          height={"20%"}
+          width={"20%"}
+        />
+      )}
     </>
   );
 }
